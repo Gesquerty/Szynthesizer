@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Szymon's Awesome Keyboard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1 class="ascii-art1">    ___       ___       ___       ___       ___       ___            ___            ___       ___       ___       ___       ___       ___   
+   /\  \     /\  \     /\__\     /\__\     /\  \     /\__\          /\  \          /\  \     /\__\     /\  \     /\  \     /\  \     /\__\  
+  /::\  \   _\:\  \   |::L__L   /::L_L_   /::\  \   /:| _|_        /::\  \        /::\  \   /:| _|_   /::\  \   /::\  \   /::\  \   /:/ _/_ 
+ /\:\:\__\ /::::\__\  |:::\__\ /:/L:\__\ /:/\:\__\ /::|/\__\      /:/\:\__\      /\:\:\__\ /::|/\__\ /:/\:\__\ /::\:\__\ /:/\:\__\ /::-"\__\
+ \:\:\/__/ \::;;/__/  /:;;/__/ \/_/:/  / \:\/:/  / \/|::/  /      \:\:\/__/      \:\:\/__/ \/|::/  / \:\/:/  / \:\:\/  / \:\ \/__/ \;:;-",-"
+  \::/  /   \:\__\    \/__/      /:/  /   \::/  /    |:/  /        \::/  /        \::/  /    |:/  /   \::/  /   \:\/  /   \:\__\    |:|  |  
+   \/__/     \/__/               \/__/     \/__/     \/__/          \/__/          \/__/     \/__/     \/__/     \/__/     \/__/     \|__|  </h1>
+
+
+
+    <div class="Main">
+        <h1>Szymon's Awesome Szynthesizer</h1>
+        <!--<p>
+            <label for="freq-mode-switch">Background Second Voice:</label>
+            <input type="checkbox" id="freq-mode-switch" />
+        </p>-->
+        <!-- Oscilloscope: shows current waveform from the analyser -->
+        <canvas id="oscilloscope" width="300" height="140" style="display:block; margin:12px auto; background:#111; border:1px solid #333;"></canvas>
+        <div class="osc-controls">
+            <h3>Oscillators</h3>   
+            <p>
+                <label for="mySelect">Oscilator 1:</label>
+                
+                <select id="mySelect">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+                <label for="osc1-gain">Gain:</label>
+                <input type="range" id="osc1-gain" min="0" max="1" step="0.01" value="0.5">
+                <span id="osc1-gain-text">50%</span><!--Make Value Update for all oscillators-->
+
+                <label for="osc1-offset">Offset:</label>
+                <input type="range" id="osc1-offset" min="0.25" max="4" step="0.25" value="1.0">
+                <span id="osc1-offset-text">1.0</span>
+            </p>
+            <p>
+                <label for="mySelect2">Oscilator 2:</label>
+
+                <select id="mySelect2">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+                <label for="osc2-gain">Gain:</label>
+                <input type="range" id="osc2-gain" min="0" max="1" step="0.01" value="0.5">
+                <span id="osc2-gain-text">50%</span>
+
+                <label for="osc2-offset">Offset:</label>
+                <input type="range" id="osc2-offset" min="0.5" max="8" step="0.5" value="2.0">
+                <span id="osc2-offset-text">2.0</span>
+            </p>
+            <p>
+                <label for="mySelect3">Oscilator 3:</label>
+
+                <select id="mySelect3">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+                <label for="osc3-gain">Gain:</label>
+                <input type="range" id="osc3-gain" min="0" max="1" step="0.01" value="0.5">
+                <span id="osc3-gain-text">50%</span>
+
+                <label for="osc3-offset">Offset:</label>
+                <input type="range" id="osc3-offset" min="1" max="16" step="0.5" value="3.0">
+                <span id="osc3-offset-text">3.0</span>
+            </p>
+            <p>
+                <label for="mySelect4">Oscilator 4:</label>
+                
+                <select id="mySelect4">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+                <label for="osc4-gain">Gain:</label>
+                <input type="range" id="osc4-gain" min="0" max="1" step="0.01" value="0.5">
+                <span id="osc4-gain-text">50%</span><!--Make Value Update for all oscillators-->
+
+                <label for="osc4-offset">Offset:</label>
+                <input type="range" id="osc4-offset" min="1" max="16" step="0.25" value="4.0">
+                <span id="osc4-offset-text">4.0</span>
+            </p>
+            <p>
+                <label for="mySelect5">Oscilator 5:</label>
+
+                <select id="mySelect5">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+                <label for="osc5-gain">Gain:</label>
+                <input type="range" id="osc5-gain" min="0" max="1" step="0.01" value="0.5">
+                <span id="osc5-gain-text">50%</span>
+
+                <label for="osc5-offset">Offset:</label>
+                <input type="range" id="osc5-offset" min="1" max="16" step="0.25" value="5.0">
+                <span id="osc5-offset-text">5.0</span>
+            </p>
+            <p>
+                <label for="mySelect6">Oscilator 6:</label>
+
+                <select id="mySelect6">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+                <label for="osc6-gain">Gain:</label>
+                <input type="range" id="osc6-gain" min="0" max="1" step="0.01" value="0.5">
+                <span id="osc6-gain-text">50%</span>
+
+                <label for="osc6-offset">Offset:</label>
+                <input type="range" id="osc6-offset" min="1" max="16" step="0.25" value="6.0">
+                <span id="osc6-offset-text">6.0</span>
+            </p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <img id="dancing-gif-left" alt="Dancing Bailar Left" class="dancing-gif-fixed" style="display: none;">
+        <img id="dancing-gif-right" alt="Dancing Bailar Right" class="dancing-gif-fixed" style="display: none;">
+        </div>
+        <div class='modulation-controls'>
+            <h3>Modulation</h3>
+            <p>
+                <label for="mod-index">Modulation Index:</label>
+                <input type="range" id="mod-index" min="0" max="1000" step="0.01" value="0">
+                <span id="mod-index-text">0.00</span>
+
+                <label for="fm-freq">FM Frequency:</label>
+                <input type="range" id="fm-freq" min="0.1" max="1000" step="0.1" value="440">
+                <span id="fm-freq-text">440.0 Hz</span>
+            </p>
+            <p>
+                <label for="am-depth">AM Depth:</label>
+                <input type="range" id="am-depth" min="0" max="0.5" step="0.01" value="0">
+                <span id="am-depth-text">0%</span>
+
+                <label for="am-freq">AM Frequency:</label>
+                <input type="range" id="am-freq" min="0" max="260" step="0.01" value="100">
+                <span id="am-freq-text">100.00 Hz</span>
+            </p>
+            <p>
+                <label for="lfo-depth">LFO Depth:</label>
+                <input type="range" id="lfo-depth" min="0" max="0.5" step="0.01" value="0">
+                <span id="lfo-depth-text">0%</span>
+
+                <label for="lfo-freq">LFO Frequency:</label>
+                <input type="range" id="lfo-freq" min="0" max="25" step="0.01" value="10">
+                <span id="lfo-freq-text">10.00 Hz</span>
+            </p>
+            <p>
+                <label for="lp-cutoff">Low Pass Filter Cutoff (Relative to Note Frequency):</label>
+                <input type="range" id="lp-cutoff" min="0" max="10" step="0.01" value="10">
+                <span id="lp-cutoff-text">10</span>
+            </p>
+        </div>
+        <div class="adsr-controls" style="margin-top:12px;">
+            <h3>ADSR</h3>
+            <p>
+                <label for="attack-time">Attack Time:</label>
+                <input type="range" id="attack-time" min="0.01" max="2" step="0.01" value="0.05">
+                <span id="attack-time-text">0.05s</span>
+            
+                <label for="attack-level">Attack Level:</label>
+                <input type="range" id="attack-level" min="0" max="1" step="0.01" value="0.8">
+                <span id="attack-level-text">80%</span>
+            </p>
+            <p>
+                <label for="sustain-level">Sustain Level:</label>
+                <input type="range" id="sustain-level" min="0" max="1" step="0.01" value="0.5">
+                <span id="sustain-level-text">50%</span>
+            
+                <label for="decay-time">Decay Time:</label>
+                <input type="range" id="decay-time" min="0" max="2" step="0.01" value="0.3">
+                <span id="decay-time-text">0.30s</span>
+            </p>
+            <p>
+                <label for="release-time">Release Time:</label>
+                <input type="range" id="release-time" min="0.01" max="2" step="0.01" value="0.3">
+                <span id="release-time-text">0.30s</span>
+            </p>
+        </div>
+        <p>
+            Short average
+            <meter id="avg-level" min="0" max="1" value="0"></meter>
+            <span id="avg-level-text">0.00</span> Amplitude
+        </p>
+        <p>
+            Instantaneous
+            <meter id="inst-level" min="0" max="1" value="0"></meter>
+            <span id="inst-level-text">0.00</span> Amplitude
+        </p>
+    </div>
+
+
+    <h1 class="ascii-art2">    ___       ___       ___       ___       ___       ___            ___            ___       ___       ___       ___       ___       ___   
+   /\__\     /\  \     /\  \     /\  \     /\__\     /\  \          /\  \          /\__\     /\  \     /\__\     /\__\     /\  \     /\  \  
+  /:/ _/_   /::\  \   /::\  \   /::\  \   /:| _|_   /::\  \        /::\  \        /:| _|_   /::\  \   /::L_L_   |::L__L   _\:\  \   /::\  \ 
+ /::-"\__\ /:/\:\__\ /::\:\__\ /:/\:\__\ /::|/\__\ /\:\:\__\      /:/\:\__\      /::|/\__\ /:/\:\__\ /:/L:\__\  |:::\__\ /::::\__\ /\:\:\__\
+ \;:;-",-" \:\ \/__/ \:\:\/  / \:\/:/  / \/|::/  / \:\:\/__/      \:\:\/__/      \/|::/  / \:\/:/  / \/_/:/  /  /:;;/__/ \::;;/__/ \:\:\/__/
+  |:|  |    \:\__\    \:\/  /   \::/  /    |:/  /   \::/  /        \::/  /         |:/  /   \::/  /    /:/  /   \/__/     \:\__\    \::/  / 
+   \|__|     \/__/     \/__/     \/__/     \/__/     \/__/          \/__/          \/__/     \/__/     \/__/               \/__/     \/__/  </h1>
+
+</body>
+<script src="script2.js"></script>
+
+</html>
